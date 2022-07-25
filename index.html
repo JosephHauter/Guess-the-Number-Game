@@ -1,26 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-<div class="container">
-  <button class="button-20" role="button" id="againButton">Reset</button>
+<html lang="en">
+<head>
+    <title>Project 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <h1> Guessing Game </h1>
+        <h2>Guess the number between 1 and 100</h2>
+        <div class="BigBox">
+            <div class= "boxleft">
+                <div class ="side1" >
+                    <p class = 'score'>Score: 10 </p>
+                    <p class = 'Hscore'>High Score: 0</p>
+                </div>
+                <div class ="side1"> 
+                    <button class = 'reset'>Reset</button>
 
-  <div class="container2">
-<img src="https://c.tenor.com/doIsoH43a2EAAAAM/think-emoji.gif" alt="" width="100px;">
-<p id="outputText">Guess a number from 1 to 100</p>
-  <input type="text" name="" value="" placeholder="Guess a Number" id="userInput">
-  <button class="button-20" role="button" id="enterButton">Check</button>
-  <h3>Guess a Number</h3>
-  </div>
-
-</div>
-
-
-
-    <script src="js.js" charset="utf-8"></script>
-  </body>
+                </div>
+            </div>
+            <div class="centerBox">
+                <div class="imgbox"> <img src="Images\question.png" alt="question"></div>
+                <input class = "uInput" type = "text" placeholder= "Guess a Number">
+                <button class = 'check'>check</button>
+                <p class= 'msg' >Guess a Number</p>
+                
+            </div>
+            <div class= "History">
+                <p>Guess History</p>
+            </div>
+    </div>
+    <script src="project3.js"></script>
+</body>
 </html>

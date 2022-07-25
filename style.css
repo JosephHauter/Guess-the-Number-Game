@@ -1,0 +1,81 @@
+body{
+
+    font-family: 'Press Start 2P', cursive;
+    background-color:black;
+
+}
+  
+
+h1, h2{
+    text-align: center;
+    color: white;
+}
+
+.BigBox{
+    width: 70%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+    border: 6px solid #db3eb1
+}
+.boxleft{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.side1, .side2{
+    margin: 5px;
+    padding: 5px;
+}
+
+.side1{
+    background-color: plum;
+    border-radius: 10%;
+}
+.centerBox{
+    margin: auto;
+    width: 40%;
+    border: 4px solid skyblue;
+    text-align:  center;
+    padding: 5px;
+    border-radius: 10%;
+    border-style: dotted;
+}
+.imgbox{
+   width: 30%;
+   margin: auto;
+   padding: 5px;
+}
+
+.imgbox img{
+    width: 100%;
+}
+.reset, .check{
+    border: none;
+    background: none;
+    font-family: 'Press Start 2P', cursive;
+}
+.uInput{
+    background: none;
+    color: skyblue;
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    border: 2px solid blue;
+    width: 90%;
+    margin: 5px;
+}
+.msg{
+    color: yellow;
+}
+
+.check{
+    margin: 5px;
+    padding: 5px;
+    background-color: skyblue;
+}
+.check:hover{
+    background-color: blue;
+}
+.History{
+    color: white;
+}
