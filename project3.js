@@ -1,3 +1,4 @@
+//Variables
 const uInput = document.querySelector('.uInput');
 const msg = document.querySelector('.msg');
 const msg1 = document.querySelector('.msg1');
@@ -16,7 +17,7 @@ let randomnum = Math.floor(Math.random()*100);
 let guessed_nums =[];
 const pic = document.getElementById('pic');
 
-
+//Starting Values
 let scorepoint = 10;
 let Hscorepoint = 0;
 
@@ -26,45 +27,29 @@ console.log(randomnum);
 check.addEventListener('click', function() {
   // Is it a number??
   if(isNaN(uInput.value)||uInput.value ===""){
-    msg.textContent = 'Not a Number'
+    msg.textContent = 'Not a Number';
   }
-  else{// It is a number can play
+  else if(uInput.value>100 || uInput.value<1){
+    msg.textContent = 'Please enter a number 1-100';
+  }
+  else{// It is a value number can play
     // Has points to play
     if(scorepoint>0){
-        //Correct Number
-        if (Number(uInput.value) === randomnum){
-            if(scorepoint>=Hscorepoint){
-              Hscorepoint = scorepoint;
-            }
-            Hscore.textContent =`High Score: ${Hscorepoint}`;
-            msg.textContent = 'Congrats! You win!';
-            BigBox.style.background = "#228B22";
-            BigBox.style.border = "5px solid white";
-            pic.src="./Images/trophy.png";
-            uInput.style.display = "none";
-            check.style.display = "none";
-            side1.style.display = "none";
-            side2.style.display = "none";
-            msg1.textContent= `${randomnum} is the secret number`;
-            msg2.textContent= `Your Score: ${scorepoint}`;
-            msg3.textContent = `High Score: ${Hscorepoint} `
-            msg1.style.display = "block";
-            msg2.style.display = "block";
-            msg3.style.display = "block";
-            trys.style.display = "inline";
-
+      //Correct Number
+      if (Number(uInput.value) === randomnum){
+        final();
+      }
+      //Wrong number
+      else{
+        if(!guessed_nums.includes(uInput.value)){  
+          wrong();  
         }
-        //Wrong number
-        else{
-          if(!guessed_nums.includes(uInput.value)){
-            guessed_nums.push(uInput.value);
-            wrong();
-            guessbox.textContent = guessed_nums;
-          }else {
-            msg.textContent='Number has already been checked';
-          }
+        else {
+          msg.textContent='Number has already been checked';
         }
+      }
     }
+
     // No points left to play
     else {
       BigBox.style.background = "#DC143C";
@@ -88,15 +73,16 @@ check.addEventListener('click', function() {
 })
 
 function wrong(){
-
-    scorepoint --;
-    score.textContent =`Score: ${scorepoint}`;
-    if (randomnum < uInput.value){
-        msg.textContent='Your number is too high';
+  guessed_nums.push(uInput.value);//place guessed number in array
+  scorepoint --;
+  score.textContent =`Score: ${scorepoint}`;
+  if (randomnum < uInput.value){
+    msg.textContent='Your number is too high';
     }
-    else{
-        msg.textContent='Your number is too low';
-    }
+  else{
+    msg.textContent='Your number is too low';
+  }
+  guessbox.textContent = guessed_nums; //show guessed number
 }
 
 reset.addEventListener('click', origin);
@@ -123,4 +109,26 @@ function origin(){
     side1.style.display = "inline";
     side2.style.display = "inline";
     console.log(randomnum);
+}
+
+function final(){
+  if(scorepoint>=Hscorepoint){
+    Hscorepoint = scorepoint;
+  }
+  Hscore.textContent =`High Score: ${Hscorepoint}`;
+  msg.textContent = 'Congrats! You win!';
+  BigBox.style.background = "#228B22";
+  BigBox.style.border = "5px solid white";
+  pic.src="./Images/trophy.png";
+  uInput.style.display = "none";
+  check.style.display = "none";
+  side1.style.display = "none";
+  side2.style.display = "none";
+  msg1.textContent= `${randomnum} is the secret number`;
+  msg2.textContent= `Your Score: ${scorepoint}`;
+  msg3.textContent = `High Score: ${Hscorepoint} `
+  msg1.style.display = "block";
+  msg2.style.display = "block";
+  msg3.style.display = "block";
+  trys.style.display = "inline";
 }
