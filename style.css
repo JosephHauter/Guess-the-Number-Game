@@ -25,10 +25,11 @@ h1, h2{
     padding: 5px;
 }
 
-.side1{
+.side1, .side2{
     background-color: plum;
     border-radius: 10%;
 }
+
 .centerBox{
     margin: auto;
     width: 40%;
@@ -48,7 +49,7 @@ h1, h2{
     width: 100%;
 }
 
-.reset, .check{
+.reset, .check, .trys{
     border: none;
     background: none;
     font-family: 'Press Start 2P', cursive;
@@ -82,6 +83,23 @@ h1, h2{
 .check:hover{
     background-color: blue;
 }
+
+.trys{
+    display: none;
+    margin: 5px;
+    padding: 5px;
+    background-color: yellow;
+}
+.trys:hover{
+    background-color: orange;
+}
+
 .History{
     color: white;
+}
+
+.msg1, .msg2, .msg3{
+  color: white;
+  font-size: 11px;
+  display: none;
 }
