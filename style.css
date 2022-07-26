@@ -1,10 +1,7 @@
 body{
-
     font-family: 'Press Start 2P', cursive;
     background-color:black;
-
 }
-  
 
 h1, h2{
     text-align: center;
@@ -16,7 +13,7 @@ h1, h2{
     margin: auto;
     border-radius: 5px;
     padding: 10px;
-    border: 6px solid #db3eb1
+    border: 6px solid #db3eb1;
 }
 .boxleft{
     display: flex;
@@ -28,10 +25,11 @@ h1, h2{
     padding: 5px;
 }
 
-.side1{
+.side1, .side2{
     background-color: plum;
     border-radius: 10%;
 }
+
 .centerBox{
     margin: auto;
     width: 40%;
@@ -50,10 +48,19 @@ h1, h2{
 .imgbox img{
     width: 100%;
 }
-.reset, .check{
+
+.reset, .check, .trys{
     border: none;
     background: none;
     font-family: 'Press Start 2P', cursive;
+}
+.reset{
+    margin: 5px;
+    padding: 5px;
+    background-color: plum;
+}
+.reset:hover{
+  color: yellow;
 }
 .uInput{
     background: none;
@@ -76,6 +83,23 @@ h1, h2{
 .check:hover{
     background-color: blue;
 }
+
+.trys{
+    display: none;
+    margin: 5px;
+    padding: 5px;
+    background-color: yellow;
+}
+.trys:hover{
+    background-color: orange;
+}
+
 .History{
     color: white;
+}
+
+.msg1, .msg2, .msg3{
+  color: white;
+  font-size: 11px;
+  display: none;
 }
