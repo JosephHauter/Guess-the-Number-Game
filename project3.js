@@ -32,9 +32,9 @@ check.addEventListener('click', function() {
   else if(uInput.value>100 || uInput.value<1){
     msg.textContent = 'Please enter a number 1-100';
   }
-  else{// It is a value number can play
+  else{// It is a valid number can play
     // Has points to play
-    if(scorepoint>0){
+    if(scorepoint>1){
       //Correct Number
       if (Number(uInput.value) === randomnum){
         final();
@@ -49,25 +49,22 @@ check.addEventListener('click', function() {
         }
       }
     }
-
-    // No points left to play
-    else {
-      BigBox.style.background = "#DC143C";
-      pic.src="./Images/game-over.png";
-      msg.textContent= "YOU LOST";
-      msg1.textContent= `Don't give up!`;
-      msg2.textContent= `${randomnum} was the secret number`;
-      BigBox.style.border = "5px solid yellow";
-      // Show
-      msg1.style.display = "block";
-      msg2.style.display = "block";
-      trys.style.display = "inline";
-      // Do not show
-      uInput.style.display = "none";
-      check.style.display = "none";
-      msg3.style.display = "none";
-      side2.style.display = "none";
-
+    else{//last try
+      if (Number(uInput.value) === randomnum){
+        final();
+      }
+      //Wrong number
+      else{
+        if(!guessed_nums.includes(uInput.value)){  
+          guessed_nums.push(uInput.value);
+          guessbox.textContent = guessed_nums; //show guessed number
+          loose();  
+        }
+        else {
+          msg.textContent='Number has already been checked';
+          
+        }
+      }
     }
   }
 })
@@ -131,4 +128,23 @@ function final(){
   msg2.style.display = "block";
   msg3.style.display = "block";
   trys.style.display = "inline";
+}
+
+function loose(){
+  score.textContent =`Score: 0`;
+  BigBox.style.background = "#DC143C";
+  pic.src="./Images/game-over.png";
+  msg.textContent= "YOU LOST";
+  msg1.textContent= `Don't give up!`;
+  msg2.textContent= `${randomnum} was the secret number`;
+  BigBox.style.border = "5px solid yellow";
+  // Show
+  msg1.style.display = "block";
+  msg2.style.display = "block";
+  trys.style.display = "inline";
+  // Do not show
+  uInput.style.display = "none";
+  check.style.display = "none";
+  msg3.style.display = "none";
+  side2.style.display = "none";
 }
